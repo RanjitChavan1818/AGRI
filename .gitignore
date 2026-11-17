@@ -1,0 +1,38 @@
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+
+# Local configuration and generated data
+**/.env
+**/.env.*
+!.env.example
+!.env.*.example
+*.sqlite3
+*.db
+*.log
+
+# Frontend dependencies and build output
+**/node_modules/
+**/dist/
+
+# Model artifacts and other large generated files
+*.keras
+*.h5
+*.onnx
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+backend/.env
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/db.sqlite3
+backend/.pytest_cache/
+backend/.DS_Store
+backend/models/*.keras

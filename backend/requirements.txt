@@ -1,0 +1,8 @@
+Django==5.2.7
+djangorestframework==3.16.1
+django-cors-headers==4.9.0
+tensorflow==2.20.0
+keras==3.13.2
+Pillow==11.3.0
+python-dotenv==1.1.1
+psycopg2-binary==2.9.10

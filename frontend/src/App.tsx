@@ -1,0 +1,5 @@
+import { useEffect, useState } from 'react'
+import Footer from './components/Footer'; import Navbar from './components/Navbar'; import About from './pages/About'; import Home from './pages/Home'; import Predict from './pages/Predict'
+type Route = '/' | '/predict' | '/about'; const routes: Route[] = ['/','/predict','/about']; const currentRoute = (): Route => routes.includes(window.location.pathname as Route) ? window.location.pathname as Route : '/'
+function App() { const [route, setRoute] = useState<Route>(currentRoute); useEffect(() => { const onPopState = () => setRoute(currentRoute()); window.addEventListener('popstate', onPopState); return () => window.removeEventListener('popstate', onPopState) }, []); const navigate = (to: Route) => { if (to !== route) { window.history.pushState({}, '', to); setRoute(to); window.scrollTo({top:0,behavior:'smooth'}) } }; return <div className="min-h-screen bg-[#fbfdf9]"><Navbar currentRoute={route} onNavigate={navigate}/><main>{route === '/' && <Home onNavigate={navigate}/>} {route === '/predict' && <Predict/>} {route === '/about' && <About/>}</main><Footer onNavigate={navigate}/></div> }
+export default App
